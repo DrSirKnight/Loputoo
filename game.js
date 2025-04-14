@@ -234,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getRandomPuzzles(array, count) {
         const copy = [...array];
-        path = window.location.pathname
         if (document.getElementById('indexid') != null) {
             const today = new Date();
             const todayTime = today.getDate() * 1000000 + today.getMonth() * 10000 + today.getFullYear();
@@ -242,6 +241,25 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             shuffle(copy)
         }
-        return copy.slice(0, count);
+        let puzzles = copy.slice(0, count);
+        let findPuzzle = false;
+        let notFits = -1;
+        while (findPuzzle) {
+            for (let i = 0; i < 4; i++) {
+                let words = findPuzzle[i][3]
+                for (let j = 0; j < 4; i++) {
+                    if (i != j) {
+                        for (word in words) {
+                            if (puzzles[j].has(word)) {
+                                notFits = i;
+                            }
+                        }
+                    }
+                }
+            }
+            puzzles.splice(notFits, 1);
+
+        }
+        return puzzles
     }
 });
