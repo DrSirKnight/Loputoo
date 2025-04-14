@@ -204,6 +204,7 @@ body {
     .button {
         font-size: 10px;
         width: 60px;
+        padding: 10px;
     }
 
     .title {
