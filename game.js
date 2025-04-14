@@ -234,7 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getRandomPuzzles(array, count) {
         const copy = [...array];
-        if (window.location.pathname == '/index.html') {
+        path = window.location.pathname
+        if (path.endsWith('/') || path.endsWith('/index.html')) {
             const today = new Date();
             const todayTime = today.getDate() * 1000000 + today.getMonth() * 10000 + today.getFullYear();
             shuffle(copy, todayTime);
