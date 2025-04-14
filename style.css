@@ -221,4 +221,9 @@ body {
     .end-info {
         font-size: 10px;
     }
+
+    .status {
+        padding: 10px;
+        margin: 5px;
+    }
 }
