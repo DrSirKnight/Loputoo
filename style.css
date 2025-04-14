@@ -184,6 +184,16 @@ body {
     margin: 10px;
 }
 
+dialog {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 1300px) {
     .game-container {
         width: 370px;

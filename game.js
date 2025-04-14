@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let definitions;
 
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+    const wordPopup = document.getElementById('popup-word');
+    const defPopup = document.getElementById('popup-def');
+
     wordDefinitionClick()
 
     fetch("puzzles.json")
@@ -149,6 +154,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    closePopup.addEventListener('click', () => {
+        popup.close();
+    });
+
     async function clipboard(text) {
         await navigator.clipboard.writeText(text);
     }
@@ -202,7 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function wordDefinitionClick() {
         document.addEventListener("click", (e) => {
             if (e.target.classList.contains("clickable-word")) {
-                alert(`Sõna: ${e.target.textContent}\nDefinitsioon: ${definitions[e.target.textContent]}`);
+                popup.showModal();
+                wordPopup.textContent = `Sõna: ${e.target.textContent}`
+                defPopup.textContent = `Definitsioon: ${definitions[e.target.textContent]}`
             }
         });
     }    
