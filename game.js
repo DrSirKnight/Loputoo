@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let findPuzzle = false;
         let notFits = -1;
         while (findPuzzle) {
+            findPuzzle = true;
             for (let i = 0; i < 4; i++) {
                 let words = findPuzzle[i][3]
                 for (let j = 0; j < 4; i++) {
@@ -252,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         for (word in words) {
                             if (puzzles[j].has(word)) {
                                 notFits = i;
+                                findPuzzle = false;
                             }
                         }
                     }
