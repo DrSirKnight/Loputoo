@@ -40,6 +40,7 @@ body {
     cursor: pointer;
     text-align: center;
     transition: background 0.3s;
+    word-break: break-word;
 }
 
 /* Highlighted state */
@@ -189,7 +190,7 @@ body {
     }
 
     .grid-item {
-        font-size: 6px;
+        font-size: 12px;
     }
 
     .grid-container {
