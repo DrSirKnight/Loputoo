@@ -80,7 +80,6 @@ body {
 
 .title {
     max-width: 100%;
-    align-items: center;
     text-align: center;
     padding: 25px;
     margin-top: 20px;
@@ -88,6 +87,7 @@ body {
     color: #c0a171;
     font-size: 85px;
     padding-bottom: 50px;
+    margin-top: 164px;
 }
 
 body {

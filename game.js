@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function completeGuess() {
         if (checkForConnection()) {
-            document.getElementById('status').textContent = `Proove jäänud: ${tries}`;
+            document.getElementById('status').textContent = `Katseid alles: ${tries}`;
             if (solvedConnections.length == 4 || tries == 0) {
                 gameEnd();
             }
