@@ -181,7 +181,7 @@ body {
     margin: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
     .game-container {
         width: 370px;
     }
