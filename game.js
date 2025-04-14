@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         completeGuess();
     });
 
-    if (window.location.pathname == '/index.html') {
+    if (document.getElementById('indexid') != null) {
         document.getElementById('share').addEventListener('click', function () {
             clipboard(`🟦⬛⬜ Ma leidsin ${i} ühendust ${i+4-tries} arvamisega tänases mängus! 🟦⬛⬜`)
         });
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function getRandomPuzzles(array, count) {
         const copy = [...array];
         path = window.location.pathname
-        if (path.endsWith('/') || path.endsWith('/index.html')) {
+        if (document.getElementById('indexid') != null) {
             const today = new Date();
             const todayTime = today.getDate() * 1000000 + today.getMonth() * 10000 + today.getFullYear();
             shuffle(copy, todayTime);
