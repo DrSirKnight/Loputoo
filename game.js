@@ -255,23 +255,35 @@ document.addEventListener("DOMContentLoaded", () => {
         let puzzles = copy.slice(0, count);
         let findPuzzle = false;
         let notFits = -1;
-        while (findPuzzle) {
+        let i2 = count;
+
+        while (!findPuzzle) {
             findPuzzle = true;
             for (let i = 0; i < 4; i++) {
-                let words = findPuzzle[i][3]
-                for (let j = 0; j < 4; i++) {
+                let words = puzzles[i][3]
+                for (let j = 0; j < 4; j++) {
                     if (i != j) {
-                        for (word in words) {
-                            if (puzzles[j].has(word)) {
+                        for (let word in words) {
+                            if (puzzles[j][3].includes(word)) {
                                 notFits = i;
                                 findPuzzle = false;
+                                break;
                             }
+                        }
+                        if (!findPuzzle) {
+                            break;
                         }
                     }
                 }
+                if (!findPuzzle) {
+                    break;
+                }
             }
-            puzzles.splice(notFits, 1);
-
+            if (!findPuzzle) {
+                puzzles.splice(notFits, 1);
+                puzzles.push(copy[i2]);
+                i2++;
+            }
         }
         return puzzles
     }
