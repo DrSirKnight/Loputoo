@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let i = 0;
     let tries = 4;
 
-    const difficultyColours = new Map([[0, "#A8E6CF"],[1, "#FFD3B6"],[2, "#FF8B94"],[3, "#E84A5F"]]);
+    const difficultyColours = new Map([[0,"#E3F2FD"],[1,"#BBDEFB"],[2,"#90CAF9"],[3,"#64B5F6"]]);
     let connectionDifficulty = new Map();
 
     let definitions;
