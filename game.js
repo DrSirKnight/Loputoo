@@ -146,7 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.getElementById('indexid') != null) {
         document.getElementById('share').addEventListener('click', function () {
-            clipboard(`🟦⬛⬜ Ma leidsin ${i} ühendust ${i+4-tries} arvamisega tänases mängus! 🟦⬛⬜`)
+            const today = new Date();
+            const date = `${today.getDate()}.${today.getMonth()}.${today.getFullYear()}`;
+            clipboard(`🟦⬛⬜ Ma leidsin ${i} ühendust ${i+4-tries} arvamisega ${date} mängus! 🟦⬛⬜`)
         });
     } else {
         document.getElementById('share').addEventListener('click', function () {
